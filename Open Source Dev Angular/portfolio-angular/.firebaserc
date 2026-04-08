@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "portfolio-angular-oswd"
+  },
+  "targets": {
+    "portfolio-angular-oswd": {
+      "hosting": {
+        "zoo": [
+          "portfolio-angular-oswd"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

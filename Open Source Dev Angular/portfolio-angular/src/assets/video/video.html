@@ -1,0 +1,17 @@
+<section *ngFor="let clip of videoClips" class="content-card">
+  <div class="meta">
+    <h2>{{ clip.title }}</h2>
+    <p>{{ clip.description }}</p>
+
+    <div class="video-player">
+      <video controls [poster]="clip.poster" width="640" height="360">
+        <source [src]="clip.fileName" type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+    </div>
+
+    <div class="actions">
+      <a class="btn ghost" [href]="clip.fileName" download>Download Video</a>
+    </div>
+  </div>
+</section>

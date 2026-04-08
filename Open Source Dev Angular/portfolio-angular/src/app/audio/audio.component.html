@@ -1,0 +1,20 @@
+<section *ngFor="let clip of audioClips" class="content-card" aria-labelledby="audio-heading">
+  <div class="meta">
+    <p class="short-desc">{{ clip.description }}</p>
+
+    <div class="audio-player">
+      <audio controls preload="metadata" aria-describedby="audio-desc">
+        <source [src]="'assets/audio/' + clip.fileName" type="audio/mpeg" />
+        <source [src]="'assets/audio/' + clip.fileName.replace('.mp3','.ogg')" type="audio/ogg" />
+        Your browser does not support the audio element.
+      </audio>
+      <p id="audio-desc" class="audio-help">Use the controls to play, pause, or adjust volume.</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn" [href]="'assets/audio/' + clip.transcript" target="_blank" rel="noopener">View Transcript</a>
+      <a class="btn ghost" [href]="'assets/audio/' + clip.fileName" download>Download MP3</a>
+      <a class="btn ghost" [href]="'assets/audio/' + clip.fileName.replace('.mp3','.ogg')" download>Download OGG</a>
+    </div>
+  </div>
+</section>

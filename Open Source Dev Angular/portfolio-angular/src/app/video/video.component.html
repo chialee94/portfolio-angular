@@ -1,0 +1,21 @@
+<section *ngFor="let clip of videoClips" class="content-card" aria-labelledby="video-heading">
+  <div class="meta">
+    <h2 id="video-heading">{{ clip.title }}</h2>
+    <p class="short-desc">{{ clip.description }}</p>
+
+    <div class="video-player">
+      <video controls preload="metadata" aria-describedby="video-desc" width="640" height="360"
+             [poster]="'assets/images/' + clip.poster">
+        <source [src]="'assets/video/' + clip.fileName" type="video/mp4" />
+        <source [src]="'assets/video/' + clip.fileName.replace('.mp4','.ogv')" type="video/ogv" />
+        Your browser does not support the video element.
+      </video>
+      <p id="video-desc" class="video-help">Controls are available to play, pause, or adjust the volume.</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn ghost" [href]="'assets/video/' + clip.fileName" download>Download MP4</a>
+      <a class="btn ghost" [href]="'assets/video/' + clip.fileName.replace('.mp4','.ogv')" download>Download OGV</a>
+    </div>
+  </div>
+</section>
